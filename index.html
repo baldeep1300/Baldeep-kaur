@@ -1,0 +1,415 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090914">
+  <title>Baldeep Kaur | Developer Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #090914;
+      color: #fff;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(9,9,20,0.92);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+      border-bottom: 1px solid #25233a;
+    }
+
+    .logo {
+      font-size: 27px;
+      font-weight: 800;
+      color: #a78bfa;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      font-size: 14px;
+      color: #ccc;
+      transition: .3s;
+    }
+
+    nav a:hover {
+      color: #a78bfa;
+    }
+
+    section {
+      padding: 100px 8%;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at 80% 30%, #30205b 0, transparent 35%),
+        #090914;
+    }
+
+    .hero-content {
+      max-width: 750px;
+    }
+
+    .tag {
+      display: inline-block;
+      color: #c4b5fd;
+      border: 1px solid #6d4ab5;
+      background: #1b1430;
+      padding: 7px 17px;
+      border-radius: 30px;
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      font-size: clamp(38px, 6vw, 65px);
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+
+    .gradient {
+      background: linear-gradient(90deg, #a78bfa, #60a5fa);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      color: #aaaabd;
+      font-size: 16px;
+      max-width: 600px;
+      margin: 20px 0 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      border-radius: 8px;
+      background: linear-gradient(90deg, #8b5cf6, #6366f1);
+      color: white;
+      margin: 5px 8px 5px 0;
+      font-weight: 600;
+      transition: .3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px #8b5cf655;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid #8b5cf6;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #999;
+      margin-bottom: 45px;
+    }
+
+    .about {
+      background: #0e0e1c;
+    }
+
+    .about-content {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+      color: #b8b8ca;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      max-width: 950px;
+      margin: auto;
+    }
+
+    .skill {
+      background: #151528;
+      border: 1px solid #292943;
+      padding: 25px 15px;
+      text-align: center;
+      border-radius: 12px;
+      transition: .3s;
+    }
+
+    .skill:hover {
+      transform: translateY(-7px);
+      border-color: #8b5cf6;
+    }
+
+    .skill h3 {
+      color: #c4b5fd;
+      font-size: 17px;
+    }
+
+    .projects {
+      background: #0e0e1c;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .project-card {
+      background: #17172a;
+      padding: 28px;
+      border: 1px solid #2b2b46;
+      border-radius: 14px;
+      transition: .3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      border-color: #8b5cf6;
+    }
+
+    .project-card h3 {
+      color: #c4b5fd;
+      margin-bottom: 12px;
+    }
+
+    .project-card p {
+      color: #aaaabd;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .project-link {
+      color: #a78bfa;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .contact-content {
+      max-width: 650px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .contact-content p {
+      color: #aaaabd;
+      margin-bottom: 25px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #07070f;
+      color: #888;
+      border-top: 1px solid #25233a;
+      font-size: 13px;
+    }
+
+    @media(max-width: 650px) {
+      header {
+        padding: 15px 5%;
+      }
+
+      nav {
+        gap: 10px;
+      }
+
+      nav a {
+        font-size: 11px;
+      }
+
+      section {
+        padding: 85px 6%;
+      }
+
+      .hero {
+        min-height: 90vh;
+      }
+
+      .section-title {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="#home" class="logo">BK.</a>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HOME -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <span class="tag">👋 Welcome to my portfolio</span>
+
+      <h1>Hi, I'm <span class="gradient">Baldeep Kaur</span></h1>
+
+      <h2>Aspiring Web Developer 💻</h2>
+
+      <p>
+        I'm a student and beginner developer passionate
+        about technology, programming and creating
+        beautiful websites. I'm continuously learning
+        and building projects to improve my skills.
+      </p>
+
+      <a href="#projects" class="btn">Explore Projects</a>
+      <a href="https://github.com/baldeep1300"
+         target="_blank" rel="noopener noreferrer"
+         class="btn btn-outline">My GitHub</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <h2 class="section-title">About <span class="gradient">Me</span></h2>
+    <p class="section-subtitle">Get to know me</p>
+
+    <div class="about-content">
+      <p>
+        Hello! I'm Baldeep Kaur, an aspiring developer
+        interested in web development and programming.
+
+        I enjoy learning new technologies, solving problems
+        and turning creative ideas into real projects.
+
+        My current focus is improving my HTML, CSS,
+        JavaScript, React and Python skills.
+      </p>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2 class="section-title">My <span class="gradient">Skills</span></h2>
+    <p class="section-subtitle">Technologies I'm learning and using</p>
+
+    <div class="skills-grid">
+      <div class="skill"><h3>🌐 HTML5</h3></div>
+      <div class="skill"><h3>🎨 CSS3</h3></div>
+      <div class="skill"><h3>⚡ JavaScript</h3></div>
+      <div class="skill"><h3>⚛️ React</h3></div>
+      <div class="skill"><h3>🐍 Python</h3></div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects" id="projects">
+    <h2 class="section-title">My <span class="gradient">Projects</span></h2>
+    <p class="section-subtitle">Some projects I'm building and exploring</p>
+
+    <div class="project-grid">
+
+      <div class="project-card">
+        <h3>🌐 Portfolio Website</h3>
+        <p>
+          A personal responsive website built using
+          HTML, CSS and JavaScript.
+        </p>
+        <a class="project-link"
+           href="https://github.com/baldeep1300"
+           target="_blank" rel="noopener noreferrer">
+          View on GitHub →
+        </a>
+      </div>
+
+      <div class="project-card">
+        <h3>⚛️ React Projects</h3>
+        <p>
+          Exploring React and learning how to build
+          interactive user interfaces.
+        </p>
+        <a class="project-link"
+           href="https://github.com/baldeep1300"
+           target="_blank" rel="noopener noreferrer">
+          View on GitHub →
+        </a>
+      </div>
+
+      <div class="project-card">
+        <h3>🐍 Python Projects</h3>
+        <p>
+          Practicing Python programming and developing
+          beginner-friendly applications.
+        </p>
+        <a class="project-link"
+           href="https://github.com/baldeep1300"
+           target="_blank" rel="noopener noreferrer">
+          View on GitHub →
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2 class="section-title">Get In <span class="gradient">Touch</span></h2>
+    <p class="section-subtitle">Let's connect and collaborate!</p>
+
+    <div class="contact-content">
+      <p>
+        Interested in my work or want to collaborate
+        on a project? Feel free to connect with me.
+      </p>
+
+      <a href="https://github.com/baldeep1300"
+         target="_blank" rel="noopener noreferrer"
+         class="btn">GitHub Profile</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Baldeep Kaur. Made with ❤️ and code.</p>
+  </footer>
+
+</body>
+</html>
